@@ -1,0 +1,13 @@
+Value INTERFACE (.*)
+Value TX (\w+)
+Value RX (\w+)
+Value TX_STATE (\w+)
+Value RX_STATE (\w+)
+
+Start
+  ^${INTERFACE}:
+  ^\s+Tx:\s+${TX}
+  ^\s+Rx:\s+${RX}
+  ^\s+Tx\s+state:\s+${TX_STATE}
+  ^\s+Rx\s+state:\s+${RX_STATE}
+  ^. -> Error
